@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(Vin, Vo1, Vo2, Vf, Rz, R1, R2, Rl);
 
         document.getElementById("R1").value = `${R1}Ω / ${(P_MAX*Vo1).toFixed(2)}W`;
-        document.getElementById("R2").value = `${R2}Ω / ${P_MAX*Vo2}W`;
-        document.getElementById("RL").value = Rl;
+        document.getElementById("R2").value = `${R2}Ω / ${P_MAX*Vo2}.toFixed(2)W`;
+        document.getElementById("RL").value = `${Rl}Ω`;
         document.getElementById("PM").value = `${P_MAX.toFixed(5)}A`;
     });
     document.getElementById("api").addEventListener("click", function () {
