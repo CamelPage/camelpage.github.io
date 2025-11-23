@@ -17,7 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
         R2 = (Vo2*Rz)/Vin;
 
         Rl = (Vo1-Vf)/0.020
-
+        
+        if(Rl < 0){
+            console.error(177);
+            return 1;
+        }
+        
         console.log(Vin, Vo1, Vo2, Vf, Rz, R1, R2, Rl);
 
         document.getElementById("R1").value = `${R1}Ω / ${(P_MAX*Vo1).toFixed(2)}W`;
