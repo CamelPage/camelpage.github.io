@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const Vo2 = parseFloat(document.getElementById("Vo2").value);
         const Vf  = parseFloat(document.getElementById("Vf").value);
 
-        window.location.href = `/api.htm?Ref=OS&Vin=${Vin}&Vo1=${Vo1}&Vo2=${Vo2}&Vf=${Vf}`;
+        window.location.href = `https://camelpage.github.io/ResistanceCalculator/api.html?Ref=OS&Vin=${Vin}&Vo1=${Vo1}&Vo2=${Vo2}&Vf=${Vf}`;
 
     })
 });
