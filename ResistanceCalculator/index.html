@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script src="script.js"></script>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f4f4f9;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Card container for the form */
+    .form-card {
+        background: white;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px 25px;
+    }
+
+    /* Each input+label container */
+    .input-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-group label {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    input {
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: 0.3s;
+    }
+
+    input:focus {
+        border-color: #007BFF;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0,123,255,0.3);
+    }
+
+    button {
+        padding: 8px 16px;
+        border: none;
+        background-color: #007BFF;
+        color: white;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: 0.3s;
+        width: 100%;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    .button-group {
+        grid-column: span 2;
+        display: flex;
+        gap: 10px;
+    }
+
+    @media (max-width: 500px) {
+        .form-card {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="form-card">
+    <div class="input-group">
+        <label for="Vin">Napięcie Wejściowe (Vin)</label>
+        <input type="number" id="Vin">
+    </div>
+
+    <div class="input-group">
+        <label for="PM">Natężenie Układu</label>
+        <input id="PM" disabled>
+    </div>
+
+    <div class="input-group">
+        <label for="Vo1">Napięcie Wyjściowe 1 (Vo1)</label>
+        <input type="number" id="Vo1">
+    </div>
+
+    <div class="input-group">
+        <label for="R1">Rezystancja 1</label>
+        <input id="R1" disabled>
+    </div>
+
+    <div class="input-group">
+        <label for="Vo2">Napięcie Wyjściowe 2 (Vo2)</label>
+        <input type="number" id="Vo2">
+    </div>
+
+    <div class="input-group">
+        <label for="R2">Rezystancja 2</label>
+        <input id="R2" disabled>
+    </div>
+
+    <div class="input-group">
+        <label for="Vf">Spadek Diody LED (Vf)</label>
+        <input type="number" id="Vf">
+    </div>
+
+    <div class="input-group">
+        <label for="RL">Rezystancja LED</label>
+        <input id="RL" disabled>
+    </div>
+
+    <div class="button-group">
+        <button id="calc">Przelicz</button>
+        <button id="api">API</button>
+    </div>
+</div>
+
+</body>
+</html>
