@@ -17,12 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
         R2 = (Vo2*Rz)/Vin;
 
         Rl = (Vo1-Vf)/0.020
-
+        
+        if(Rl < 0){
+            console.error(177);
+            return 1;
+        }
+        
         console.log(Vin, Vo1, Vo2, Vf, Rz, R1, R2, Rl);
 
-        document.getElementById("R1").value = `${R1}Ω / ${(P_MAX*Vo1).toFixed(2)}W`;
-        document.getElementById("R2").value = `${R2}Ω / ${P_MAX*Vo2}W`;
-        document.getElementById("RL").value = Rl;
+        document.getElementById("R1").value = `${R1.toFixed(2)}Ω / ${(P_MAX*Vo1).toFixed(2)}W`;
+        document.getElementById("R2").value = `${R2.toFixed(2)}Ω / ${(P_MAX*Vo2).toFixed(2)}W`;
+        document.getElementById("RL").value = `${Rl.toFixed(2)}Ω`;
         document.getElementById("PM").value = `${P_MAX.toFixed(5)}A`;
     });
     document.getElementById("api").addEventListener("click", function () {
