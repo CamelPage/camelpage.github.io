@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="rezystory.js"></script>
+
+    <style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f4f4f9;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Card container for the form */
+    .form-card {
+        background: white;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px 25px;
+    }
+
+    /* Each input+label container */
+    .input-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-group label {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    input {
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: 0.3s;
+    }
+
+    input:focus {
+        border-color: #007BFF;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0,123,255,0.3);
+    }
+
+    button {
+        padding: 8px 16px;
+        border: none;
+        background-color: #007BFF;
+        color: white;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: 0.3s;
+        width: 100%;
+    }
+
+    button:disabled {
+
+        background-color: #0050a7;
+        color: white;
+
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    .button-group {
+        grid-column: span 2;
+        display: flex;
+        gap: 10px;
+    }
+
+    @media (max-width: 500px) {
+        .form-card {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+</head>
+<body>
+    
+    <div class="form-card">
+        <div class="button-group">
+            <button id="E3" disabled>E3</button>
+            <button id="E6">E6</button>
+        </div>
+        <div class="button-group">
+            <button id="E12">E12</button>
+            <button id="E24">E24</button>
+        </div>
+        <div class="button-group">
+            <button id="E48">E48</button>
+            <button id="E96">E96</button>
+        </div>
+        <div class="button-group">
+            <button id="E192">E192</button>
+        </div>
+        <div class="input-group">
+            <label for="R">Rezystancja</label>
+            <input id="R">
+        </div>
+        <div class="input-group">
+            <label for="Ro">Rezystor (Po Przeliczeniu)</label>
+            <input id="Ro">
+        </div>
+        <div class="button-group">
+            <button id="calc">Przelicz</button>
+            <button id="api">API</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
