@@ -3,5 +3,5 @@ elements.unshock = {
     category: "tools",
     tool: function(pixel){
         pixel.charge = 0;
-    },
+    }
 }
