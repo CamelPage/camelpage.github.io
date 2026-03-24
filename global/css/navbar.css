@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+}
+
+.navigation {
+  font-family: Arial, sans-serif;
+  top: -5px;
+  left: 0px;
+  margin: 0px;
+  background-color: #f5f5f5;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.navbar_button {
+  background-color: #444;
+  color: white;
+  margin: 0;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  font-weight: bold;
+
+  width: 240px;
+  border-radius: 5px;
+}
+
+.navbar {
+  display: inline-block;
+}
+
+.navbar_option {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  color: #f5f5f5;
+  background-color: #555;
+  width: 240px;
+  z-index: 1;
+  margin: 0;
+  transition:
+    opacity 0.5s,
+    background-color 0.5s;
+}
+
+.navbar_option * {
+  color: #f5f5f5;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  margin: 0;
+  transition: background-color 500ms;
+
+  background-color: #555;
+  font-weight: bold;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+.navbar_option button {
+  width: 240px;
+  border-style: none;
+}
+
+.navbar_option a:hover {
+  background-color: #666;
+}
+.navbar_option button:hover {
+  background-color: #666;
+}
+
+.navbar:hover .navbar_option {
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar:hover .navbar_button {
+  background-color: #555;
+  cursor: pointer;
+  transition: 500ms ease-in-out;
+}
+nav {
+  background-color: #444;
+  padding: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  text-align: center;
+}
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
