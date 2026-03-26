@@ -1,12 +1,13 @@
 const opcje = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e"
+    "Lorem ",
+    "adipiscing ",
+    "ipsum dolor ",
+    "consectetur ",
+    "sit amet ",
+    "elit"
 ];
 
-const odp="edbac"
+const odp="Lorem ipsum dolor sit amet consectetur adipiscing elit";
 
 var o = [];
 
@@ -19,9 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
     o[2] = document.getElementById("3");
     o[3] = document.getElementById("4");
     o[4] = document.getElementById("5");
+    o[5] = document.getElementById("6");
 
     presub = document.getElementById("st");
-    presub.innerHTML="";
+    presub.value="";
 
     rst=document.getElementById("RST");
     sub=document.getElementById("SUB");
@@ -36,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         element.innerHTML = opcje[i];
         element.addEventListener("click", function() {
             out+=element.innerHTML;
-            presub.innerHTML=out;
+            presub.value=out;
             element.disabled=true;
         });
         i++;
@@ -45,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     rst.addEventListener("click", function() {
 
         out="";
-        presub.innerHTML="";
+        presub.value="";
 
         o.forEach(element => {
 
@@ -58,9 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
     sub.addEventListener("click", function() {
 
         if(out===odp) {
-            odp_e.innerHTML="Kod To ##9###";
+            odp_e.value="Kod To ##9###";
         } else {
-            odp_e.innerHTML="Spróbuj Ponownie";
+            odp_e.value="Spróbuj Ponownie";
         }
 
     });
