@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  min-height: 100vh; /* lepsze niż height */
-  background-image: url("https://placehold.co/600x400");
+  min-height: 100vh;
+  background-image: url("/Polski/EscapeRoom/img/3da3bd31-1ead-4c6b-aabe-eae2d5dbb9d5.jfif");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,8 +11,8 @@ body {
 
   display: flex;
   justify-content: center;
-  align-items: center; /* 🔥 DODAJ TO */
-  flex-direction: column; /* żeby h1 było nad kartą */
+  align-items: center;
+  flex-direction: column; 
 }
 
 /* wersja mobilna */
@@ -22,8 +22,9 @@ body {
   }
 } */
 
-h1 {
+h1,h3 {
   text-align: center;
+  margin: 2px;
 }
 
 .form-card {
@@ -37,7 +38,7 @@ h1 {
   gap: 15px;
 
   width: 100%;
-  max-width: 400px; /* żeby nie było za szerokie */
+  max-width: 400px;
 }
 .form-card button {
   padding: 8px 16px;
@@ -73,7 +74,7 @@ h1 {
   color: #333;
 }
 
-.form-card .input-group input {
+.form-card .input-group input textarea{
   padding: 8px 10px;
   border: 1px solid #ccc;
   border-radius: 4px;

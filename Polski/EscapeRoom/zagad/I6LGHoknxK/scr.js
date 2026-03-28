@@ -1,19 +1,21 @@
 const opcje = [
-    "Lorem",
-    "adipiscing",
-    "ipsum dolor",
-    "consectetur",
-    "sit amet",
-    "elit"
+    "Rosja",
+    "Włochy",
+    "Ukraina",
+    "Turcja",
+    "Norwegia",
+    "Francja"
 ];
 
-const odp="Lorem ipsum dolor sit amet consectetur adipiscing elit";
+const odp="FrancjaWłochy";
 
 var o = [];
 
 var out = "";
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    // opcje.sort(()=>Math.random()-0.5)
 
     o[0] = document.getElementById("1");
     o[1] = document.getElementById("2");
@@ -37,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     o.forEach(element => {
         element.innerHTML = opcje[i];
         element.addEventListener("click", function() {
-            out+=element.innerHTML+" ";
+            out+=element.innerHTML+" \n";
             presub.value=out;
             element.disabled=true;
         });
@@ -58,12 +60,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     sub.addEventListener("click", function() {
-
-        if(out.replaceAll(" ","")===odp.replaceAll(" ","")) {
-            odp_e.value="Kod To ##9###";
-        } else {
-            odp_e.value="Spróbuj Ponownie";
-        }
+        if(out.replaceAll(" ","").replaceAll("\n","")===odp.replaceAll(" ","").replaceAll("\n","") || out.replaceAll(" ","").replaceAll("\n","")=== "WłochyFrancja") {
+            odp_e.value="Kod tej zagadki to liczba krajów jaką odwiedził w młodości Jan Kochanowski"+"\n\n"+"Wpiszcie go w pole numer 5 na karcie do zbierania cyfr do kodu końcowego i następnie przejdź do zagadki nr 2.";
+        } else  {
+    odp_e.value = "Spróbuj ponownie za 15 Sekund";
+    o.forEach(e => {
+        e.disabled = "true";
+        setTimeout(function () {
+            e.disabled = false;
+        }, 15 * 1000);
+    });
+    rst.disabled="true";
+    setTimeout(function(){
+        rst.disabled=false;
+    },15*1000)
+            }
 
     });
 
