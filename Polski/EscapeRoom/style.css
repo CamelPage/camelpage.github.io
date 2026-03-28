@@ -16,11 +16,11 @@ body {
 }
 
 /* wersja mobilna */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   body {
     background-image: url("https://placehold.co/400x600");
   }
-}
+} */
 
 h1 {
   text-align: center;
@@ -85,4 +85,7 @@ h1 {
   border-color: #007bff;
   outline: none;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+bold {
+  font-weight: bolder;
 }

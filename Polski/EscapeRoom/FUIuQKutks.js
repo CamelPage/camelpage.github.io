@@ -1,9 +1,9 @@
 const opcje = [
-    "Lorem ",
-    "adipiscing ",
-    "ipsum dolor ",
-    "consectetur ",
-    "sit amet ",
+    "Lorem",
+    "adipiscing",
+    "ipsum dolor",
+    "consectetur",
+    "sit amet",
     "elit"
 ];
 
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     o.forEach(element => {
         element.innerHTML = opcje[i];
         element.addEventListener("click", function() {
-            out+=element.innerHTML;
+            out+=element.innerHTML+" ";
             presub.value=out;
             element.disabled=true;
         });
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sub.addEventListener("click", function() {
 
-        if(out===odp) {
+        if(out.replaceAll(" ","")===odp.replaceAll(" ","")) {
             odp_e.value="Kod To ##9###";
         } else {
             odp_e.value="Spróbuj Ponownie";
