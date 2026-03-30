@@ -19,10 +19,10 @@ function dsb() {
             e.disabled = false;
         }, 15 * 1000);
     });
-    rst.disabled="true";
-    setTimeout(function(){
-        rst.disabled=false;
-    },15*1000)
+    rst.disabled = "true";
+    setTimeout(function () {
+        rst.disabled = false;
+    }, 15 * 1000)
 
 }
 
@@ -31,6 +31,7 @@ const odp = "szlachetne zdrowie nikt się nie dowie jako smakujesz";
 var o = [];
 
 var out = "";
+var out_t = "";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -61,12 +62,14 @@ document.addEventListener("DOMContentLoaded", () => {
         element.innerHTML = opcje[i];
         element.addEventListener("click", function () {
             if (out.substr(out.length - 3) == " - ") {
-                out += element.innerHTML + "\n";
+                out += element.id + "\n";
+                out_t += element.innerHTML + "\n";
             } else {
-                out += element.innerHTML + " - ";
+                out += element.id + " - ";
+                out_t += element.innerHTML + " - ";
             }
             // out+=element.innerHTML+" ";
-            presub.value = out;
+            presub.value = out_t;
             element.disabled = true;
         });
         i++;
@@ -75,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     rst.addEventListener("click", function () {
 
         out = "";
+        out_t ="";
         presub.value = "";
 
         o.forEach(element => {
@@ -94,15 +98,14 @@ document.addEventListener("DOMContentLoaded", () => {
         // }
 
         idp = out.split("\n");
-        idp.sort();
+        idp = idp.filter(n => n);
+        idp = idp.sort();
 
-        if (idp[0] === "") {
-            if (idp[1] === "krótkie żartobliwe utwory - Fraszki") {
-                if (idp[2] === "pierwsza polska tragedia renesansowa - Pieśni") {
-                    if (idp[3] === "utwór charakteryzujący się rymowaną budową stroficzną - Odprawa posłów greckich") {
-                        if (idp[4] === "śmierć córki - Treny") {
-                            odp_e.value = "Przejdź do zagadki nr 9.";
-                        } else dsb();
+        if (idp[0] === "1 - 6") {
+            if (idp[1] === "2 - 8") {
+                if (idp[2] === "3 - 5") {
+                    if (idp[3] === "4 - 7") {
+                        odp_e.value = "Przejdź do zagadki nr 9.";
                     } else dsb();
                 } else dsb();
             } else dsb();

@@ -7,7 +7,7 @@ const opcje = [
     "Barok",
 ];
 
-const odp="Romantyzm";
+const odp="Renesans";
 
 var o = [];
 
